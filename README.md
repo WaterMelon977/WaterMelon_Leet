@@ -7,10 +7,10 @@ I have solved problems across a range of topics including **Arrays**, **Strings*
 ---
 
 ## 📂 Repository Structure
-- Problems are organized by difficulty: `Easy`, `Medium`, `Hard`
-- Solutions are provided in **Java** / **Python** / **C++**
+- Problems are organized by Topics
+- Solutions are provided in **Java** / **Python** 
 - Each solution includes:
-  - Link to the problem statement
+  - <problem_number>.py
   - Brief approach/logic explanation (where necessary)
   - Well-commented, clean code
 
@@ -45,8 +45,6 @@ Feel free to reach out if you'd like to **collaborate**, **discuss problems**, o
 - **LinkedIn**: https://www.linkedin.com/in/sumanth-ravuri-2824a5b7/
 - **Gmail**: sumanthravuri32@gmail.com
 
----
 
 
----
-
+made with ❤️ by Sumanth Ravuri
