@@ -33,7 +33,7 @@ I have solved problems across a range of topics including **Arrays**, **Strings*
 ---
 
 ## 🛠️ How to Use
-- Navigate through folders based on problem difficulty/topic.
+- Navigate through folders based on topics.
 - Read through the solution and understand the approach.
 - Try solving the problem on your own before referring to the solution.
 
