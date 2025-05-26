@@ -1,3 +1,5 @@
+https://colab.research.google.com/drive/1djJOXslserp8IerjT4kfp7DXX5s-tdgh?usp=sharing#scrollTo=xMM84zW-VHw5
+
 ## 🥞 STACK METHODS & USAGE
 
 ### Using `list` as a stack
