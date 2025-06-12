@@ -25,4 +25,22 @@ class Solution:
         return targetSum in sett
             
             
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        if not root:
+            return False
+        sett= set()
         
+        def getSum(root,total):    
+            if not root:
+                return False
+            total += root.val
+            if not (root.left or  root.right):
+                return total == targetSum
+            if getSum(root.left ,total):
+                return True
+            if getSum(root.right ,total):
+                return True
+            return False        
+        
+        return getSum(root,0)        
