@@ -44,3 +44,21 @@ class Solution:
             return False        
         
         return getSum(root,0)        
+    
+
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+        if not root:
+            return False
+        
+        def getSum(root,total):    
+            if not root:
+                return False
+            total += root.val
+            
+            if not (root.left or  root.right):
+                return total == targetSum
+
+            return getSum(root.left, total) or getSum(root.right, total)     
+        
+        return getSum(root,0)
