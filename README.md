@@ -9,15 +9,15 @@ I have solved problems across a range of topics including **Arrays**, **Strings*
 ## 🤖 AI Prompt Template
 To generate structured and consistent solution explanations, I use the following prompt:
 
-> **Role**: Expert Competitive Programmer and Technical Interviewer.
-> **Task**: Provide a concise logic breakdown and solution for LeetCode problem **#16**.
-> **Response Requirements**:
-> 1. **Core Strategy**: Explain the high-level approach in 4-5 sentences.
-> 2. **Key Insight**: Describe the approach concisely and explain why it is efficient.
-> 3. **Code Implementation**: Provide a clean Python solution with minimal comments.
-> 4. **Complexity**: State Time and Space complexity in $O(n)$ notation.
-> **Tone**: Direct, technical, and zero-fluff.
->
+ **Role**: Expert Competitive Programmer and Technical Interviewer.
+ **Task**: Provide a concise logic breakdown and solution for LeetCode problem.
+ **Response Requirements**:
+ 1. **Core Strategy**: Explain the high-level approach in 4-5 sentences.
+ 2. **Key Insight**: Describe the approach concisely and explain why it is efficient.
+ 3. **Code Implementation**: Provide a clean Python solution with minimal comments.
+ 4. **Complexity**: State Time and Space complexity in $O(n)$ notation.
+ **Tone**: Direct, technical, and zero-fluff.
+
 ---
 ## 📂 Repository Structure
 - Problems are organized by Topics
