@@ -6,8 +6,6 @@ I have solved problems across a range of topics including **Arrays**, **Strings*
 
 ---
 
-
----
 ## 📂 Repository Structure
 - Problems are organized by Topics
 - Solutions are provided in **Java** / **Python** 
