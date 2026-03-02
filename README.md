@@ -5,7 +5,7 @@ This repository contains my solutions to various **LeetCode** problems.
 I have solved problems across a range of topics including **Arrays**, **Strings**, **Linked Lists**, **Trees**, **Graphs**, **Dynamic Programming**, **Greedy Algorithms**, and more.
 
 ---
-```markdown
+
 ## 🤖 AI Prompt Template
 To generate structured and consistent solution explanations, I use the following prompt:
 
