@@ -1,19 +1,25 @@
+
 class Solution:
     def resultsArray(self, nums: List[int], k: int) -> List[int]:
+        # Edge case: If k is 1, every element is its own valid subarray
+        if k == 1:
+            return nums
+            
         n = len(nums)
         result = []
 
-        for i in range(n - k + 1):
-            is_consecutive = True
+        streak = 1
 
-            for j in range(i, i + k - 1):
-                if nums[j] + 1 != nums[j + 1]:
-                    is_consecutive = False
-                    break
-
-            if is_consecutive:
-                result.append(nums[i + k - 1])
+        for i in range(1, n):
+            if nums[i] == nums[i-1] + 1:
+                streak += 1
             else:
-                result.append(-1)
+                streak = 1
+
+            if i >= k - 1:
+                if streak >= k:
+                    result.append(nums[i])
+                else:
+                    result.append(-1)
 
         return result
