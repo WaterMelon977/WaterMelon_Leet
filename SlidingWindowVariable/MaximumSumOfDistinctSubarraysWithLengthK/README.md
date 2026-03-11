@@ -74,6 +74,7 @@ This guarantees that any window of size `k` automatically contains **distinct el
 ### Code
 
 ```python
+
 class Solution:
     def maximumSubarraySum(self, nums: list[int], k: int) -> int:
         seen = set()
@@ -98,6 +99,8 @@ class Solution:
                 max_sum = max(max_sum, total)
 
         return max_sum
+
+
 ```
 
 ---
