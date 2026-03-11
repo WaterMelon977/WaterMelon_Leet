@@ -8,7 +8,7 @@
 
 ## Approach
 
-A subarray is valid if `max(nums) - min(nums) â¤ 2`.
+A subarray is valid if `max(nums) - min(nums) <= 2`.
 
 - Use a sliding window and maintain the current windowâs maximum and minimum using two monotonic deques.
 - `maxDeque` keeps elements in decreasing order (`front = max of window`).
@@ -18,7 +18,7 @@ A subarray is valid if `max(nums) - min(nums) â¤ 2`.
 
 ## Key Insight
 
-For a valid sliding window, all subarrays ending at `right` and starting from `[left â¦ right]` are valid. Therefore, we add `right - left + 1` to the answer.
+For a valid sliding window, all subarrays ending at `right` and starting from `[left ... right]` are valid. Therefore, we add `right - left + 1` to the answer.
 
 ## Why Efficient?
 
@@ -59,7 +59,8 @@ class Solution:
             
             result += right - left + 1
         
-        return result```
+        return result
+```
 
 ## Explanation of Tricky Part of Code
 The line:
@@ -73,5 +74,5 @@ every starting point inside this window forms a valid subarray because the windo
 'the shrinking process involves removing indices from deques when they leave the current window (index == left).'
 
 ## Complexity Analysis
-- **Time:** O(n) â each index enters and leaves each deque once.
-- **Space:** O(n) â deques may hold up to n indices in worst case.
+- **Time:** O(n) — each index enters and leaves each deque once.
+- **Space:** O(n) — deques may hold up to n indices in worst case.
