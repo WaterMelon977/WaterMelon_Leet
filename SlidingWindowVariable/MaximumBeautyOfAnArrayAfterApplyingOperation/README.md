@@ -44,7 +44,10 @@ The condition:
 diff = nums[right] - nums[left]
 diff <= 2 * k
 theoretically ensures that the **adjustment ranges overlap**:
+
+``` 
 ```python
+
 [nums[left] - k, nums[left] + k]
 [nums[right] - k, nums[right] + k]
 ```
