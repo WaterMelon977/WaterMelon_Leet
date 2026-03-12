@@ -64,6 +64,23 @@ class Solution:
 ```
 
 ## Explanation of Tricky Part of Code:
-the occurrence count is calculated as:
-the number of substrings of length `x` within a run of length `L`, which is `(L - x + 1)`.
-e.g., for run `
+The occurrence count:
+```python
+L - x + 1
+
+```
+means how many substrings of length x can be formed from a run of length L.
+
+Example:
+```python
+run = "aaaa" (L=4)
+x=2 → substrings: aa, aa, aa → 3 occurrences
+
+```
+
+Edge-case handling: if no substring appears at least three times, the answer remains -1.
+
+**Complexity**
+
+Time: O(n + 26·n) worst case (small constant since only 26 characters).
+Space: O(n) for storing run lengths.
