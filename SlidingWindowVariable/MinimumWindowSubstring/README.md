@@ -61,14 +61,20 @@ class Solution:
         
 l, r = result
         return "" if min_len == float('inf') else s[l:r+1]
-def explain_tricky_part():
-description: |
-dThe variable `formed` tracks how many characters meet their **required frequency**. We only increment it when:
-a```
-windo[c] == need[c]
-def`
-dnot when `window[c] > need[c]`. Edge-case handling: if no valid window exists, `min_len` stays `inf`, so we return an empty string.
-def complexity():
-type: explanation
-time: O(n) â both pointers move at most ` n` times.
-space: O(k) â hashmap stores counts for characters in `t`.
+
+```
+**Explain any tricky part of the code**
+The variable formed tracks how many characters meet their required frequency.
+We only increment it when:
+
+```plaintext
+window[c] == need[c]
+```
+not when window[c] > need[c].
+
+Edge-case handling: if no valid window exists, min_len stays inf, so we return an empty string.
+
+**Complexity**
+
+Time: O(n) — both pointers move at most n times.
+Space: O(k) — hashmap stores counts for characters in t.
