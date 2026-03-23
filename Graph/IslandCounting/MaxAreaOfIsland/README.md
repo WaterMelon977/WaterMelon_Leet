@@ -101,3 +101,64 @@ Space: O(m * n) — recursion stack in worst case
 -----------------
 
 
+This is one of those quirks of Python that trips up almost everyone at first. It comes down to how Python handles **immutable** vs. **mutable** objects when you nest functions.
+
+### 1. Why `current_island_size[0]` works (but `int` doesn't)
+
+In Python, integers are **immutable**. When you do `x = 5` and then `x += 1`, you aren't actually changing the number 5; you are creating a brand-new integer (6) and telling the label `x` to point to it instead.
+
+* **The Problem:** In your `dfs` function, if you just had `current_island_size = 0`, the moment you try to do `current_island_size += 1`, Python thinks, *"Oh, you're creating a **new local variable** inside `dfs` named `current_island_size`."* It loses the connection to the one you defined outside.
+* **The List Hack:** A list is **mutable**. When you use `current_island_size = [0]`, you aren't changing the *list* itself when you modify its contents; you’re just reaching inside the box and changing what's there. Because you aren't reassigning the variable name (you aren't saying `current_island_size = ...`), Python doesn't try to create a local copy. All recursive calls are reaching into the **same box**.
+
+---
+
+### 2. What is `nonlocal`?
+
+The `nonlocal` keyword is the "official" way to solve the problem above without using the "List Hack." 
+
+It tells Python: *"Hey, when I mention this variable, don't create a new local one. Look in the parent function's scope and use that one instead."*
+
+**Here is how your code would look using `nonlocal`:**
+
+```python
+def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+    rows, cols = len(grid), len(grid[0])
+    max_island = 0
+    current_island_size = 0 # Just a plain integer!
+
+    def dfs(i, j):
+        # We need to declare both as nonlocal to modify them inside here
+        nonlocal current_island_size 
+        
+        if i < 0 or j < 0 or i >= rows or j >= cols or grid[i][j] == 0:
+            return
+        
+        grid[i][j] = 0
+        current_island_size += 1 # This now updates the variable in the outer scope
+        
+        dfs(i + 1, j)
+        dfs(i - 1, j)
+        dfs(i, j + 1)
+        dfs(i, j - 1)
+
+    for i in range(rows):
+        for j in range(cols):
+            if grid[i][j] == 1:
+                current_island_size = 0 
+                dfs(i, j)
+                max_island = max(max_island, current_island_size)
+
+    return max_island
+```
+
+### Summary Table
+
+| Feature | Using a List `[0]` | Using `nonlocal` |
+| :--- | :--- | :--- |
+| **Mechanism** | Modifies a shared object in memory. | Points the variable name to the outer scope. |
+| **Pros** | Works in older versions of Python (pre-3.0). | More readable and "standard" Python. |
+| **Cons** | Feels a bit "hacky" to some. | Only works for nested functions (not global scope). |
+
+
+
+Would you like me to explain how the **global** keyword differs from **nonlocal**, or are you good with the nested function scope?
